@@ -1,0 +1,12 @@
+# Python bytecode cache
+__pycache__/
+
+# Runtime
+.env/
+env/
+.venv/
+venv/
+*.log
+
+# Packaging
+*.egg-info/
