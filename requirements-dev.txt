@@ -1,0 +1,7 @@
+pylint>=2.0.0
+pytest>=3.0.0
+pytest-asyncio
+pytest-cov
+sphinx>=1.7.0
+sphinxcontrib-asyncio
+tox>=3.0.0
