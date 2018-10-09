@@ -6,6 +6,7 @@ Welcome to cryptomate documentation!
     :maxdepth: 3
     :caption: Contents:
 
+    market/index
 
 Indices and tables
 ==================
