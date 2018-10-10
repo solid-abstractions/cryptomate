@@ -7,6 +7,7 @@ Welcome to cryptomate documentation!
     :caption: Contents:
 
     market/index
+    trading/index
 
 Indices and tables
 ==================
