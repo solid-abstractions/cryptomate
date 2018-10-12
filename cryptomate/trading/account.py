@@ -1,6 +1,7 @@
+from abc import ABC, abstractmethod
 
 
-class Account:
+class Account(ABC):
     ''' A valid, opened account on a trading platform.
 
     :ivar callback: the callable that is invoked on every event on the account.
@@ -15,10 +16,12 @@ class Account:
     :ivar float margin_level: :attr:`equity` to :attr:`used_margin` ratio.
     '''
 
+    @abstractmethod
     def close(self):
         ''' Release the account and associated resources '''
         raise NotImplementedError
 
+    @abstractmethod
     async def add_order(self, order, options=None):
         ''' Send a new order to the exchange.
 
@@ -28,10 +31,12 @@ class Account:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     async def cancel_order(self, order_id):
         ''' Cancel the order with given id. '''
         raise NotImplementedError
 
+    @abstractmethod
     def get_rules(self, symbol):
         ''' Get the trading rules for a market.
 

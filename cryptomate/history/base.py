@@ -1,8 +1,10 @@
+from abc import ABC, abstractmethod
 
 
-class History:
+class History(ABC):
     ''' Random-access to past market events. '''
 
+    @abstractmethod
     async def get_reader(self, description):
         ''' Get a reader handle for a market feed description.
 
@@ -11,6 +13,7 @@ class History:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     async def get_writer(self, description):
         ''' Get a writer handle for a market feed description.
 
@@ -20,7 +23,7 @@ class History:
         raise NotImplementedError
 
 
-class Reader:
+class Reader(ABC):
     ''' A read handle to market history data
 
     :ivar bool has_candles: whether
@@ -30,6 +33,7 @@ class Reader:
     :ivar int newest_timestamp: Number of seconds between the Epoch and the most recent data known.
     '''
 
+    @abstractmethod
     async def read_candles(self, start, stop):
         ''' Read candle data.
 
@@ -39,6 +43,7 @@ class Reader:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     async def read_ticks(self, start, stop):
         ''' Read tick data.
 
@@ -48,6 +53,7 @@ class Reader:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     async def read_order_updates_snapshot(self, timestamp):
         ''' Read the most recent order book snapshot before a point in time.
 
@@ -57,6 +63,7 @@ class Reader:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     async def read_order_updates(self, start, stop):
         ''' Read order book updates.
 
@@ -67,16 +74,18 @@ class Reader:
         raise NotImplementedError
 
 
-class Writer:
+class Writer(ABC):
     ''' A write handle to market history data
 
     :ivar int newest_timestamp: Number of seconds between the Epoch and the most recent data written.
     '''
 
+    @abstractmethod
     async def flush(self):
         ''' Ensures all data written so far has been actually sent to storage. '''
         raise NotImplementedError
 
+    @abstractmethod
     def write_candles(self, candles):
         ''' Write a set of candles to the dataset
 
@@ -85,6 +94,7 @@ class Writer:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     def write_ticks(self, ticks):
         ''' Write a set of ticks to the dataset
 
@@ -93,6 +103,7 @@ class Writer:
         '''
         raise NotImplementedError
 
+    @abstractmethod
     def write_order_updates(self, updates, *, order_book):
         ''' Write a set of candles to the dataset
 
