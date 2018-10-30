@@ -4,14 +4,13 @@
 sudo: false
 language: python
 python:
-    - 3.5
     - 3.6
 
 install:
     - pip install .
     - pip install -r requirements-dev.txt
 script:
-    - pytest
+    - python -m pytest
 
 git:
     depth: 10       # no more history to save on bandwidth

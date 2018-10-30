@@ -21,6 +21,6 @@ You need a working python3 interpreter. That's it.
 * Running tests:
 
   ```bash
-  .env/bin/pytest
+  .env/bin/python -m pytest
   ```
 
