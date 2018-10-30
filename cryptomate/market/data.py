@@ -21,7 +21,7 @@ FeedDescription.__doc__ = ''' Identifies a market on a provider, with aggregatio
 :type period: int or None
 '''
 
-OrderUpdate = namedtuple('OrderUpdate', 'id timestamp type amount price action', module=__name__)
+OrderUpdate = namedtuple('OrderUpdate', 'id timestamp type amount price', module=__name__)
 OrderUpdate.__doc__ = ''' A single order status event on a market's order book.
 
 :param int id: Id of event. Unique for a given market.
@@ -29,7 +29,6 @@ OrderUpdate.__doc__ = ''' A single order status event on a market's order book.
 :param str type: ``buy`` or ``sell``.
 :param ~decimal.Decimal amount: Order volume in traded asset.
 :param ~decimal.Decimal price: Order price in secondary asset.
-:param str action: ``create``, ``update``, ``delete``.
 '''
 
 Tick = namedtuple('Tick', 'id timestamp type amount price', module=__name__)
