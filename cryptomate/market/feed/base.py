@@ -12,9 +12,9 @@ class Feed(ABC):
 
     :cvar str name: feed name, for use in feed descriptions.
     :ivar callable callback: a function invoked on every event.
-                             Has form ``callback(feed, symbol, event, data)``
+                             Has form ``callback(feed, symbol, event, *, data)``
     :ivar callable on_error: invoked when an enabled event stream gets an error condition.
-                             Has form ``on_error(feed, symbol, event, exc=None, retry, msg)``
+                             Has form ``on_error(feed, symbol, event, *, exc, retry, msg)``
     '''
 
     name = None
@@ -42,7 +42,7 @@ class Feed(ABC):
 
     @abstractmethod
     async def enable(self, symbol, event):
-        ''' Enable an even stream.
+        ''' Enable an event stream.
 
         A stream may only be enabled once. Enabling a feed already enabled is a bug.
 
@@ -53,7 +53,7 @@ class Feed(ABC):
 
     @abstractmethod
     async def disable(self, symbol, event):
-        ''' Disable an even stream.
+        ''' Disable an event stream.
 
         A stream may only be disabled if it is enabled.
 

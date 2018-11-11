@@ -1,5 +1,5 @@
-Feed Base
-=========
+Base Interfaces
+===============
 
 Abstraction of a single market data feed.
 

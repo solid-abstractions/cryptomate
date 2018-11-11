@@ -1,5 +1,5 @@
-Feed Factory
-============
+Factory
+=======
 
 Abstract out details for selecting a feed class and instantiating it.
 

@@ -26,6 +26,7 @@ setup(
     },
     python_requires='>=3.5',
     install_requires=[
+        'aiohttp>=3.4.0',
     ],
     tests_require=['pytest', 'pytest-asyncio'],
 )

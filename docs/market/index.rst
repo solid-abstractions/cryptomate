@@ -8,6 +8,5 @@ The market module provides access to real-time market events.
     aggregator
     data
     engine
-    feed/base
-    feed/factory
+    feed/index
     orderbook
