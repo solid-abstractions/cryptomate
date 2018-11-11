@@ -51,5 +51,8 @@ autodoc_member_order = 'bysource'
 
 # -- Options for intersphinx extension ---------------------------------------
 
-intersphinx_mapping = {'https://docs.python.org/3': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'aiohttp': ('https://aiohttp.readthedocs.io/en/stable/', None),
+}
 

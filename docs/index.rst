@@ -16,6 +16,7 @@ Welcome to cryptomate documentation!
     :maxdepth: 3
     :caption: Tests:
 
+    tests/aiohttp
     tests/certificate
 
 Indices and tables
